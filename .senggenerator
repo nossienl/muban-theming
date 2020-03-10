@@ -1,0 +1,7 @@
+{
+  "templatePath": "./build-tools/generator-template,./node_modules/muban-transition-component/template",
+  "destination": ".",
+  "templateExtensions": [
+    ".sg"
+  ]
+}

@@ -1,0 +1,140 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: map_get($gridSpacing, MEDIUM) * -0.5;
+  margin-right: map_get($gridSpacing, MEDIUM) * -0.5;
+}
+.col {
+  flex: 0 0 auto;
+  width: 100%;
+  padding-right: (map_get($gridSpacing, MEDIUM) / 2);
+  padding-left: (map_get($gridSpacing, MEDIUM) / 2);
+}
+@mixin column($columnsWanted, $total: 12) {
+  max-width: percentage($columnsWanted / $total);
+  flex-basis: percentage($columnsWanted / $total);
+}
+// Base column sizes (from 1 to 12)
+@for $i from 0 through $gridColumns {
+  .col-#{$i} {
+    @include column($i, $gridColumns);
+  }
+  @if $i <= $gridColumns {
+    .col-push-#{$i} {
+      margin-left: percentage($i / $gridColumns);
+    }
+    .col-pull-#{$i} {
+      margin-right: percentage($i / $gridColumns);
+    }
+  }
+}
+@include respond-to(SMALL) {
+  @for $i from 0 through $gridColumns {
+    .col-s-#{$i} {
+      @include column($i, $gridColumns);
+    }
+    @if $i <= $gridColumns {
+      .col-s-push-#{$i} {
+        margin-left: percentage($i / $gridColumns);
+      }
+      .col-s-pull-#{$i} {
+        margin-right: percentage($i / $gridColumns);
+      }
+    }
+  }
+}
+@include respond-to(MEDIUM) {
+  @for $i from 0 through $gridColumns {
+    .col-m-#{$i} {
+      @include column($i, $gridColumns);
+    }
+    @if $i <= $gridColumns {
+      .col-m-push-#{$i} {
+        margin-left: percentage($i / $gridColumns);
+      }
+      .col-m-pull-#{$i} {
+        margin-right: percentage($i / $gridColumns);
+      }
+    }
+  }
+}
+@include respond-to(LARGE) {
+  @for $i from 0 through $gridColumns {
+    .col-l-#{$i} {
+      @include column($i, $gridColumns);
+    }
+    @if $i <= $gridColumns {
+      .col-l-push-#{$i} {
+        margin-left: percentage($i / $gridColumns);
+      }
+      .col-l-pull-#{$i} {
+        margin-right: percentage($i / $gridColumns);
+      }
+    }
+  }
+}
+@include respond-to(XLARGE) {
+  @for $i from 0 through $gridColumns {
+    .col-xl-#{$i} {
+      @include column($i, $gridColumns);
+    }
+    @if $i <= $gridColumns {
+      .col-xl-push-#{$i} {
+        margin-left: percentage($i / $gridColumns);
+      }
+      .col-xl-pull-#{$i} {
+        margin-right: percentage($i / $gridColumns);
+      }
+    }
+  }
+}
+@include respond-to(XXLARGE) {
+  @for $i from 0 through $gridColumns {
+    .col-xxl-#{$i} {
+      @include column($i, $gridColumns);
+    }
+    @if $i <= ceil($gridColumns / 2) {
+      .col-xxl-push-#{$i} {
+        margin-left: percentage($i / $gridColumns);
+      }
+      .col-xxl-pull-#{$i} {
+        margin-right: percentage($i / $gridColumns);
+      }
+    }
+  }
+}
+
+.col-s-visible,
+.col-m-visible,
+.col-l-visible {
+  display: none;
+  visibility: hidden;
+}
+
+.col-s-visible {
+  display: inline-flex;
+  visibility: visible;
+
+  @include respond-to(MEDIUM) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.col-m-visible {
+  @include respond-to(SMALL) {
+    display: none;
+    visibility: hidden;
+  }
+  @include respond-to(MEDIUM) {
+    display: inline-flex;
+    visibility: visible;
+  }
+}
+
+.col-l-visible {
+  @include respond-to(LARGE) {
+    display: inline-flex;
+    visibility: visible;
+  }
+}

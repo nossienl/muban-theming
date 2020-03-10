@@ -1,0 +1,40 @@
+@import "~normalize.css";
+@import "~seng-scss";
+
+/* Globally available project specific mixins, functions and variables */
+@import "global";
+
+@import "util/mixin/themify";
+@import "layout/grid";
+
+@import "type/font";
+@import "type/type";
+
+// Generic stuff
+html {
+  .scroll-tracker-point {
+    color:red!important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 150ms linear;
+  }
+
+  &[data-debug='true'] {
+    .scroll-tracker-point {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+body {
+  transition: all 200ms linear;
+  font-family: $baseFont;
+
+  @include themify($themes) {
+    background-color: themed('backgroundColor');
+    color: themed('textColor');
+    font-family: themed('baseFont'), sans-serif;
+  }
+}

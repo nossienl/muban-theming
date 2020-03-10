@@ -1,0 +1,25 @@
+{
+  "themes": {
+    "flexa": {
+      "backgroundColor": "lightcoral",
+      "textColor": "purple",
+      "baseFont": "'Roboto'"
+    },
+    "flouris-b": {
+      "backgroundColor": "lightblue",
+      "textColor": "red",
+      "baseFont": "'Oxanium'"
+    },
+    "light": {
+      "backgroundColor": "lightgray",
+      "textColor": "black",
+      "baseFont": "'Trade Winds'"
+    },
+    "dark": {
+      "backgroundColor": "black",
+      "textColor": "white",
+      "baseFont": "'DIN Alternate'"
+    }
+  }
+}
+

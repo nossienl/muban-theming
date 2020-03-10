@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="./muban-options.scss">
+<script src="./MubanOptions.ts"></script>
+
+<div class="muban-options" data-component="muban-options">
+
+  <div class="options-panel">
+    <h2>Muban Options</h2>
+    <div class="options-content">
+      <div class="options-content-inner">
+      {{#if @root.options.showThemeSelect }}
+          <div class="option theme-option">
+            <span class="label">Select Theme: </span>
+            <select class='js-theme-select'>
+              <option selected disabled>-- select theme --</option>
+              <option value="none">none</option>
+            </select>
+          </div>
+      {{/if}}
+      {{#if @root.options.showGridOverlay }}
+        <div class="option grid-option">
+          <span class="label">Show Grid: </span>
+          <span><input type="checkbox" id="switch" class="js-grid-toggle" /><label for="switch">Toggle</label></span>
+        </div>
+      {{/if}}
+        {{#if @root.options.showDebugLabels }}
+          <div class="option debug-option">
+            <span class="label">Show ScrollTracker Debug labels: </span>
+            <span><input type="checkbox" id="switch-1" class="js-debug-toggle" /><label for="switch-1">Toggle</label></span>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="options-handle"></div>
+  </div>
+
+  <div class="grid-overlay js-grid-overlay">
+    <div class="grid-container">
+      <div class="grid">
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+        <div class="col col-1"></div>
+      </div>
+    </div>
+  </div>
+
+</div>

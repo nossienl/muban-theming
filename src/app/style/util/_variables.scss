@@ -1,0 +1,26 @@
+// Correctly set `seng-scss` assetPath
+$pathAsset: "~app";
+
+// Fonts
+$baseFont: Arial, sans-serif;
+
+// Z-Index
+$zLayout: default;
+
+// Colors
+$colorPrimaryTheme: #ff6e3f;
+
+// GRID VARIABLES
+$gridColumns: 12;
+$sideGutter: (
+  SMALL: 10px,
+  MEDIUM: 20px,
+);
+$gridSpacing: (
+  SMALL: 10px,
+  MEDIUM: 10px,
+);
+$halfGridSpacing: map_get($gridSpacing, MEDIUM) * 0.5;
+
+@import "../../data/shared-variable/media-queries.json";
+@import "../../data/shared-variable/themes.json";
