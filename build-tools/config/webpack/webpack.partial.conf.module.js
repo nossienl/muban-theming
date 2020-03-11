@@ -188,7 +188,7 @@ module.exports = ({ config, isDevelopment, buildType, isPartials, isCode }) => w
           return [
             {
               test: /\.scss$/,
-              use: isPartials ? [{ loader: 'null-loader' }] : getStyleLoaders(true, theme),
+              use: isPartials ? [{ loader: 'null-loader' }] : getStyleLoaders(true),
             },
             {
               test: /\.css$/,
